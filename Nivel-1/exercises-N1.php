@@ -32,7 +32,6 @@ $Maria->calculateTax();
 ?>
 
 <h1 style="color: darkblue;"> Exercise 1</h1>
-
 <?php
 Class Shape {
     protected $width;
@@ -41,35 +40,23 @@ Class Shape {
     function __construct($width, $height) {
         $this->width = $width;
         $this->height = $height;
-
     }
 }
-
 class Triangle extends Shape {
-
-
     function calculateArea() {
         $area = ($this->width * $this->height) / 2;
         return $area;
-
     }
-
     function resultArea() {
         $area = $this->calculateArea();
         echo "Triangle area  = base: {$this->width}, height: {$this->height} is: " . $area . "<br>";
     }
 }
-
-
 class Rectangle extends Shape {
-
-
     function calculateArea() {
         $area = ($this->width * $this->height);
         return $area;
-
     }
-
     function resultArea() {
         $area = $this->calculateArea();
         echo "Rectangle area  = width: {$this->width}, height: {$this->height} is: " . $area . "<br>";
@@ -81,6 +68,4 @@ $Rectangle =new Rectangle(12,41);
 
 $triangle->resultArea();
 $Rectangle->resultArea();
-
-
 ?>
