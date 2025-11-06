@@ -47,72 +47,7 @@ h3 {
 <body>
 
 <?php
-Class Movie {
-    public $name;
-    public $duration;
-    public $director;
-
-    public function __construct($name, $duration, $director) {
-        $this->name = $name;
-        $this->duration = $duration;
-        $this->director = $director;
-    }
-}
-
-Class Cinema {
-    public $name;
-    public $city;
-    public $movies = [];
-
-    public function __construct($name, $city, $movies) {
-        $this->name = $name;
-        $this->city = $city;
-        $this->movies = $movies;
-    }
-
-    public function displayMovies() {
-        foreach ($this->movies as $movie) {
-            echo "Movie: " . $movie->name . "<br>";
-            echo "Duration: " . $movie->duration . " min<br>";
-            echo "Director: " . $movie->director . "<br><br>";
-        }
-    }
-    
-    function getMovieDurations() {
-        $longest = null;
-        foreach ($this->movies as $movie) {
-            if ($longest === null || $movie->duration > $longest->duration) {
-                $longest = $movie;
-            }
-        }
-        return $longest;
-    } 
-}
-function searchByDirector ($directorName, $allCinemas) {
-    $foundMovies = [];
-
-    foreach($allCinemas as $cinema){
-        foreach($cinema->movies as $movie) {
-            if ($movie->director === $directorName) {
-
-                $ifExist = false;
-
-                foreach($foundMovies as $existingMovies) {
-                    if ($existingMovies->name === $movie->name){
-                        $ifExist = true;
-                        break;
-                    }
-                }
-                if(!$ifExist) {
-                $foundMovies[] = $movie;
-                }
-            }
-        }
-    }
-    return $foundMovies;
-}
-
-
+require_once 'MovieCatalog.php';
 $Movie1 = new Movie("Home Alone", 103, "Chris Columbus"); 
 $Movie2 = new Movie("The Godfather", 128, "Zach Cregger");  
 $Movie3 = new Movie("Parasite", 132, "Bong Joon-ho");
@@ -129,7 +64,7 @@ $allCinemas = [$Cinema1, $Cinema2, $Cinema3, $Cinema4];
 
 //mostar informacion Cinema 1
 echo '<section class="cinema-info">';
-echo "<h3>Películas en CinePub Barcelona:</h3>";
+echo "<h3>Movies in CinePub Barcelona:</h3>";
 echo '<div class="card highlight">';
 echo "<h3>{$Cinema1->name} - {$Cinema1->city}</h3>";
 $Cinema1->displayMovies();
@@ -138,7 +73,7 @@ echo '</section>';
 
 //mostar informacion CInema 2
 echo '<section class="cinema-info">';
-echo "<h3>Películas en CinePub Barcelona:</h3>";
+echo "<h3>Movies in CinePub Barcelona:</h3>";
 echo '<div class="card highlight">';
 echo "<h3>{$Cinema2->name} - {$Cinema2->city}</h3>";
 $Cinema2->displayMovies();
