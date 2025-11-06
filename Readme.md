@@ -1,4 +1,4 @@
-# 🐘 Práctica: Programación Orientada a Objetos en PHP  
+# Práctica: Programación Orientada a Objetos en PHP  
 
 **Descripción:**  
 Colección de ejercicios prácticos diseñados para reforzar los fundamentos de la **Programación Orientada a Objetos (POO)** en **PHP**.  
@@ -6,14 +6,14 @@ A través de tres niveles progresivos, se abordan conceptos como clases, objetos
 
 ---
 
-## 🛠 Tecnologías utilizadas
+## Tecnologías utilizadas
 - **Lenguaje:** PHP  
 - **Entorno de ejecución:** XAMPP  
 - **Editor recomendado:** Visual Studio Code  
 
 ---
 
-## ⚙️ Instalación y ejecución
+## Instalación y ejecución
 
 1. Clonar el repositorio:  
    ```bash
